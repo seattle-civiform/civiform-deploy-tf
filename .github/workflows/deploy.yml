@@ -92,7 +92,7 @@ jobs:
           TEST_USER_DISPLAY_NAME: 'TEST, UATAPP'
           TEST_CIVIC_ENTITY_SHORT_NAME: '${{ vars.CIVIC_ENTITY_SHORT_NAME }}'
           BASE_URL: 'https://${{ vars.SUBDOMAIN }}.seattle.gov'
-        uses: nick-fields/retry@v2
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 70
           max_attempts: 1
