@@ -16,7 +16,7 @@
 
 # REQUIRED
 # One of prod, staging, or dev.
-export CIVIFORM_MODE="staging"
+export CIVIFORM_MODE="prod"
 
 # REQUIRED
 # CiviForm server version to deploy.
@@ -107,7 +107,6 @@ export STAGING_ADD_NOINDEX_META_TAG=true
 # The domain name for this CiviForm deployment, including the protocol.
 # E.g. "https://civiform.seattle.gov"
 export BASE_URL="https://civiformtest.seattle.gov"
-export STAGING_HOSTNAME="civiformstage.seattle.gov"
 
 # OPTIONAL
 # The time zone to be used when rendering any times within the CiviForm
