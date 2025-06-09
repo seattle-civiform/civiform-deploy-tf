@@ -65,6 +65,7 @@ export DOCKER_USERNAME="civiform"
 # REQUIRED
 # The authentication protocal used for applicant and trusted intermediary accounts.
 export CIVIFORM_APPLICANT_AUTH_PROTOCOL="oidc"
+export CIVIFORM_ALARM_EMAIL="itd_civiform@seattle.gov"
 
 # Deployment-specific Civiform configuration
 #################################################
