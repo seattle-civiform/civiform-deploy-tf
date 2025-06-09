@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v2.41.0"
+export CIVIFORM_VERSION="v3.0.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -146,8 +146,8 @@ export POSTGRES_BACKUP_RETENTION_DAYS=7
 export APP_PREFIX="cf-prod" # max 19 chars, only numbers, letters, dashes, and underscores
 
 export SSL_CERTIFICATE_ARN="arn:aws:acm:us-west-2:405662711265:certificate/c62046c2-ac1c-4131-8a1d-3c91d2b81a21"
-export FARGATE_DESIRED_TASK_COUNT=2
-export ECS_SCALE_TARGET_MIN_CAPACITY=2
+export FARGATE_DESIRED_TASK_COUNT=1
+export ECS_SCALE_TARGET_MIN_CAPACITY=1
 
 # REQUIRED
 # Which auth provider to use for applicants to login.
