@@ -235,7 +235,7 @@ export MEASUREMENT_ID="G-HXM0Y35TGE"
 
 # ESRI
 export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates, https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.seattle.gov/server/rest/services/COS/Seattle_City_Limits/MapServer/1/query"
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://services.arcgis.com/ZOyb2t4B0UYuYNYH/arcgis/rest/services/Seattle_City_Limits/FeatureServer"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES="CITYNAME"
