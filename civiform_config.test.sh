@@ -235,7 +235,7 @@ export MEASUREMENT_ID="G-HXM0Y35TGE"
 
 # ESRI
 export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates, https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://services.arcgis.com/ZOyb2t4B0UYuYNYH/arcgis/rest/services/Seattle_City_Limits/FeatureServer"
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin___base/MapServer/446"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES="CITYNAME"
@@ -245,8 +245,8 @@ export ESRI_WELLKNOWN_ID_OVERRIDE="2926"
 export FILE_UPLOAD_ALLOWED_FILE_TYPE_SPECIFIERS="image/*,.pdf,.xlsx"
 
 # Language Settings
-export CIVIFORM_SUPPORTED_LANGUAGES="en-US, am, zh-TW, ko, so, es-US, tl, vi"
-export CIVIFORM_APPLICANT_ENABLED_LANGUAGES="en-US, am, zh-TW, ko, so, es-US, tl, vi"
+export CIVIFORM_SUPPORTED_LANGUAGES="en-US, am, ar, zh-TW, ko, so, es-US, tl, vi"
+export CIVIFORM_APPLICANT_ENABLED_LANGUAGES="en-US, am, ar, zh-TW, ko, so, es-US, tl, vi"
 
 # Feature Flags
 export ADMIN_OIDC_ENHANCED_LOGOUT_ENABLED=true
