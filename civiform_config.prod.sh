@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v3.5.0"
+export CIVIFORM_VERSION="v3.7.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -240,7 +240,7 @@ export MEASUREMENT_ID="G-HXM0Y35TGE"
 
 # ESRI
 export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates, https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.seattle.gov/server/rest/services/COS/Seattle_City_Limits/MapServer/1/query"
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin___base/MapServer/446/query"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES="CITYNAME"
