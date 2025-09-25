@@ -16,7 +16,7 @@
 
 # REQUIRED
 # One of prod or staging.
-export CIVIFORM_MODE="staging"
+export CIVIFORM_MODE="prod"
 
 # REQUIRED
 # CiviForm server version to deploy.
@@ -30,7 +30,7 @@ export CIVIFORM_MODE="staging"
 #   for example "v1.2.3".
 # - In the case where you need to quickly deploy a fix, can also be
 #   specific snapshot tag from https://hub.docker.com/r/civiform/civiform/tags
-export CIVIFORM_VERSION="latest"
+export CIVIFORM_VERSION="v3.0.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -125,8 +125,9 @@ export BASE_URL=""
 
 # OPTIONAL
 # When set enables demo mode for the civiform application. Should be set for
-# staging but not prod. The value is hostname without protocol and should correspond
-# BASE_URl. Example: "civiform.seattle.gov"
+# demo instances when you want access to "dev tools" but not prod or sites with data.
+# The value is hostname without protocol and should correspond to the BASE_URl.
+# Example: "civiform.seattle.gov"
 export STAGING_HOSTNAME=""
 
 # OPTIONAL
@@ -181,8 +182,8 @@ export AWS_USERNAME=""
 
 # REQUIRED
 # An Azure Storage Account name for storing the SAML keystore secrets.
-# Only letters and numbers allowed.
-# e.g. "civiformsamlkeystoresecrets"
+# Only letters and numbers allowed. Must be between 3-24 characters.
+# e.g. "cfsamlkeystoresecrets"
 export SAML_KEYSTORE_ACCOUNT_NAME=""
 
 # REQUIRED
