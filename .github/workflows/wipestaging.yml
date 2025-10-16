@@ -1,0 +1,12 @@
+name: Clear staging database
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 * * * *'
+permissions: read-all
+jobs:
+  clear-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear staging database
+        run: curl -X POST https://civiformstage.seattle.gov/dev/seed/clearHeadless
