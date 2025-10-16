@@ -275,6 +275,7 @@ export CIVIFORM_SUPPORTED_LANGUAGES="en-US, am, zh-TW, ko, so, es-US, tl, vi"
 export CIVIFORM_APPLICANT_ENABLED_LANGUAGES="en-US, am, zh-TW, ko, so, es-US, tl, vi"
 
 # Feature Flags
+export SHOW_NOT_PRODUCTION_BANNER_ENABLED=true
 export ALLOW_ADMIN_WRITEABLE=true
 export ALLOW_CIVIFORM_ADMIN_ACCESS_PROGRAMS=true
 export API_GENERATED_DOCS_ENABLED=true
