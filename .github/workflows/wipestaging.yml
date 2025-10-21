@@ -2,7 +2,7 @@ name: Clear staging database
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '0 12 * * *'
 permissions: read-all
 jobs:
   clear-db:
