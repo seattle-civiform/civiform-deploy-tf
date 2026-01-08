@@ -234,7 +234,7 @@ export DATABASE_APPLY_DESTRUCTIVE_CHANGES=true
 export MEASUREMENT_ID="G-HXM0Y35TGE"
 
 # ESRI
-export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates, https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
+export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates?category=Point+Address, https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?category=Point+Address"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin___base/MapServer/446/query"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS="Seattle"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle"
