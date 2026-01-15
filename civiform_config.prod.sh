@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v3.19.0"
+export CIVIFORM_VERSION="v3.20.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -260,3 +260,4 @@ export NEW_APPLICANT_URL_SCHEMA_ENABLED=true
 export ALLOW_ADMIN_WRITEABLE=true
 export IT_EMAIL_ADDRESS="Civiform@seattle.gov"
 export SESSION_REPLAY_PROTECTION_ENABLED=true
+export SETTINGS_CACHE_ENABLED=true
