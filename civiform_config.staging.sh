@@ -259,7 +259,7 @@ export ESRI_FIND_ADDRESS_CANDIDATES_URLS="https://gisdata.seattle.gov/cosgis/res
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ENABLED=true
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS="https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin___base/MapServer/446/query, https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin__address_point/MapServer/642/query"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS="Seattle, King County"
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle, King County"
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS="Seattle, KING"
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES="CITYNAME, COUNTY"
 export ESRI_WELLKNOWN_ID_OVERRIDE="2926"
 
