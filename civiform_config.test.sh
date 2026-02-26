@@ -189,7 +189,7 @@ export APPLICANT_OIDC_MIDDLE_NAME_ATTRIBUTE=""
 export APPLICANT_OIDC_LAST_NAME_ATTRIBUTE=""
 
 # REQUIRED
-export APPLICANT_REGISTER_URI="https://qalogin.seattle.gov:12443/#/registration?appName=CIVIFORM_TEST"
+export APPLICANT_REGISTER_URI="https://qalogin.seattle.gov:12443/#/login?appName=CIVIFORM_TEST"
 export APPLICANT_OIDC_OVERRIDE_LOGOUT_URL="https://qalogin.seattle.gov:12443/#/logout?appName=CIVIFORM_TEST"
 export APPLICANT_OIDC_POST_LOGOUT_REDIRECT_PARAM=""
 export APPLICANT_OIDC_PROVIDER_LOGOUT=true
