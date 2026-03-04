@@ -195,7 +195,7 @@ export APPLICANT_OIDC_MIDDLE_NAME_ATTRIBUTE=""
 export APPLICANT_OIDC_LAST_NAME_ATTRIBUTE=""
 
 # REQUIRED
-export APPLICANT_REGISTER_URI="https://login.seattle.gov/#/registration?appName=CiviForm"
+export APPLICANT_REGISTER_URI="https://login.seattle.gov/#/login?appName=CiviForm"
 export APPLICANT_OIDC_OVERRIDE_LOGOUT_URL="https://login.seattle.gov/#/logout?appName=CIVIFORM"
 export APPLICANT_OIDC_POST_LOGOUT_REDIRECT_PARAM=""
 export APPLICANT_OIDC_PROVIDER_LOGOUT=true
