@@ -34,7 +34,8 @@ export CIVIFORM_VERSION="SNAPSHOT-0b186e9-fix"
 #    depending on USE_DOCKER flag.
 #
 # Using "latest" is recommended.
-export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
+export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.27.0"
+#export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
 
 # Terraform configuration
