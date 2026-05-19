@@ -256,8 +256,6 @@ export NEW_APPLICANT_URL_SCHEMA_ENABLED=true
 export SESSION_REPLAY_PROTECTION_ENABLED=true
 export IT_EMAIL_ADDRESS="itd_civiform@seattle.gov"
 export SETTINGS_CACHE_ENABLED=true
-# Enable session timeout
-export SESSION_TIMEOUT_ENABLED=true
 
 # Session timeout values overriding the defaults
 export SESSION_INACTIVITY_WARNING_THRESHOLD_MINUTES=10
