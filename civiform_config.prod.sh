@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="SNAPSHOT-0b186e9-fix"
+export CIVIFORM_VERSION="v3.29.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -34,7 +34,7 @@ export CIVIFORM_VERSION="SNAPSHOT-0b186e9-fix"
 #    depending on USE_DOCKER flag.
 #
 # Using "latest" is recommended.
-export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.27.0"
+export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.29.0"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
 
@@ -261,3 +261,7 @@ export NEW_APPLICANT_URL_SCHEMA_ENABLED=true
 export IT_EMAIL_ADDRESS="Civiform@seattle.gov"
 export SESSION_REPLAY_PROTECTION_ENABLED=true
 export SETTINGS_CACHE_ENABLED=true
+
+# Session timeout values overriding the defaults
+export SESSION_INACTIVITY_WARNING_THRESHOLD_MINUTES=10
+export SESSION_INACTIVITY_TIMEOUT_MINUTES=45
