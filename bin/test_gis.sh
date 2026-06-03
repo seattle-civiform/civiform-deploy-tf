@@ -45,7 +45,7 @@ findAddressCandidatesUrl="https://gisdata.seattle.gov/cosgis/rest/services/locat
 test_url "${findAddressCandidatesUrl}" ".candidates" 3
 
 echo "Test serviceArea"
-serviceAreaUrl="https://services.arcgis.com/Ej0PsM5Aw677QF1W/arcgis/rest/services/CITY_KC_AREA_446/FeatureServer/0/query?geometryType=esriGeometryPoint&outFields=*&returnGeometry=false&f=json&inSR=2926&maxLocations=3&geometry={''x'':1271253,''y'':224277,''spatialReference'':2926}"
+serviceAreaUrl="https://services.arcgis.com/Ej0PsM5Aw677QF1W/arcgis/rest/services/CITY_KC_AREA_446/FeatureServer/0/query?where=&objectIds=&geometry=%7B%22x%22%3A1271253%2C%22y%22%3A224277%2C%22spatialReference%22%3A%7B%22wkid%22%3A2926%7D%7D&geometryType=esriGeometryPoint&inSR=2926&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&outDistance=&relationParam=&returnGeodetic=false&outFields=*&returnGeometry=false&returnCentroid=false&returnEnvelope=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&defaultSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&collation=&orderByFields=&groupByFieldsForStatistics=&returnAggIds=false&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnTrueCurves=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
 test_url "${serviceAreaUrl}" ".fields" 5
 
 echo "Test ssl certficate"
