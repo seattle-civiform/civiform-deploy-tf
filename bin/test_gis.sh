@@ -45,7 +45,7 @@ findAddressCandidatesUrl="https://gisdata.seattle.gov/cosgis/rest/services/locat
 test_url "${findAddressCandidatesUrl}" ".candidates" 3
 
 echo "Test serviceArea"
-serviceAreaUrl="https://gisdata.kingcounty.gov/arcgis/rest/services/OpenDataPortal/admin___base/MapServer/446/query?geometryType=esriGeometryPoint&outFields=*&returnGeometry=false&f=json&inSR=2926&maxLocations=3&geometry={''x'':1271253,''y'':224277,''spatialReference'':2926}"
+serviceAreaUrl="https://services.arcgis.com/Ej0PsM5Aw677QF1W/arcgis/rest/services/CITY_KC_AREA_446/FeatureServer/0/query?geometryType=esriGeometryPoint&outFields=*&returnGeometry=false&f=json&inSR=2926&maxLocations=3&geometry={''x'':1271253,''y'':224277,''spatialReference'':2926}"
 test_url "${serviceAreaUrl}" ".fields" 5
 
 echo "Test ssl certficate"
