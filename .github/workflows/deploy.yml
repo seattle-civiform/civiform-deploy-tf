@@ -105,7 +105,7 @@ jobs:
         
       - name: Upload test videos and traces on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: tests videos and traces
           retention-days: 3
