@@ -39,7 +39,7 @@ export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.29.0"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
 
 # Lock to this postgres version so it doesn't update unexpectedly
-export POSTGRESQL_VERSION="16.8"
+export POSTGRESQL_VERSION="16.13"
 
 # Terraform configuration
 #################################################
@@ -265,4 +265,3 @@ export SETTINGS_CACHE_ENABLED=true
 # Session timeout values overriding the defaults
 export SESSION_INACTIVITY_WARNING_THRESHOLD_MINUTES=10
 export SESSION_INACTIVITY_TIMEOUT_MINUTES=45
-export NEW_APPLICANT_GUEST_MERGING_STRATEGY_DRY_RUN_ENABLED=true
