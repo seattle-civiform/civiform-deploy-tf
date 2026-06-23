@@ -38,9 +38,6 @@ export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.29.0"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
 
-# Lock to this postgres version so it doesn't update unexpectedly
-export POSTGRESQL_VERSION="16.13"
-
 # Terraform configuration
 #################################################
 
