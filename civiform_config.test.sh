@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v3.32.0"
+export CIVIFORM_VERSION="v3.33.0"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -261,3 +261,4 @@ export SETTINGS_CACHE_ENABLED=true
 export SESSION_INACTIVITY_WARNING_THRESHOLD_MINUTES=10
 export SESSION_INACTIVITY_TIMEOUT_MINUTES=45
 export NEW_APPLICANT_GUEST_MERGING_STRATEGY_DRY_RUN_ENABLED=true
+export LEAK_DETECTION_THRESHOLD=5000
