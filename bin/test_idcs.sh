@@ -25,7 +25,8 @@ node -e '
 const { chromium } = require("playwright");
 
 (async () => {
-  const browser = await chromium.launch({ headless: false });
+  // headless: true is REQUIRED for GitHub Actions
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   let page = await context.newPage();
 
