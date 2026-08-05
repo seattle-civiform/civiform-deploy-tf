@@ -25,9 +25,14 @@ node -e '
 const { chromium } = require("playwright");
 
 (async () => {
-  // headless: true is REQUIRED for GitHub Actions
   const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext();
+  
+  // Explicitly set a desktop viewport so the login button is not hidden in a mobile menu
+  const context = await browser.newContext({
+    viewport: { width: 1920, height: 1080 },
+    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" // Helps bypass basic bot detection
+  });
+  
   let page = await context.newPage();
 
   const username = process.env.SEATTLE_LOGIN_USERNAME;
@@ -66,7 +71,7 @@ const { chromium } = require("playwright");
     const loginButton = page.getByRole("button", { name: "Login" });
     await loginButton.click();
 
-    // 5. Check for intermediate "Continue" screen (just in case it still pops up)
+    // 5. Check for intermediate "Continue" screen
     console.log("Checking for App Selection (Continue) screen...");
     try {
       const continueLocator = page.locator("button:has-text(\"Continue\")").first();
@@ -92,6 +97,19 @@ const { chromium } = require("playwright");
     console.log("\u001b[32mSuccessfully authenticated and verified user session element!\u001b[0m");
   } catch (error) {
     console.error("\u001b[31mLogin automation or verification failed:\u001b[0m", error);
+    
+    // Debugging dump to see what the GitHub Action runner actually sees
+    console.log("\n--- DEBUG INFO ---");
+    console.log("Current URL:", page.url());
+    try {
+        console.log("Page Title:", await page.title());
+        const bodyText = await page.innerText("body");
+        console.log("Page Content Snippet:\n", bodyText.substring(0, 500));
+    } catch (e) {
+        console.log("Could not extract page text.");
+    }
+    console.log("------------------\n");
+    
     process.exit(1);
   } finally {
     await browser.close();
