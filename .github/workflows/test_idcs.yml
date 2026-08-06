@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Playwright & Browsers
         run: |
@@ -44,7 +44,7 @@ jobs:
               
       - name: Send failure alert to Slack
         if: failure()
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v2.0.0
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: '🚨 *CiviForm Login Test Failed* 🚨\nThe SSO/IDCS login flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
@@ -53,7 +53,7 @@ jobs:
 
       - name: Force send test alert to Slack
         if: (env.FORCE_SEND_SLACK_MESSAGE == 'true')
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v2.0.0
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: '✅ *CiviForm Slack Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
