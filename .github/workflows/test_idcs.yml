@@ -3,14 +3,14 @@ name: Test CiviForm Login
 on:
   workflow_dispatch:
     inputs:
-      force_send_teams_message:
+      force_send_slack_message:
         type: boolean
-        description: 'Message Teams anyway'
+        description: 'Send test Slack message anyway'
         default: false
         required: false
 
   schedule:
-    # Runs at the top of every hour. Adjust the cron syntax if you want a different frequency.
+    # Runs at the top of every hour
     - cron: '0 * * * *'
 
 permissions: {}
@@ -20,19 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FORCE_SEND_TEAMS_MESSAGE: ${{ (github.event.inputs != null && github.event.inputs.force_send_teams_message == 'true') }}
+      FORCE_SEND_SLACK_MESSAGE: ${{ (github.event.inputs != null && github.event.inputs.force_send_slack_message == 'true') }}
       
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # New Step: Playwright requires Node.js to run
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # New Step: Install Playwright and the necessary Linux dependencies for headless Chromium
       - name: Install Playwright & Browsers
         run: |
           npm install playwright
@@ -40,21 +38,24 @@ jobs:
 
       - name: Run CiviForm login testing script
         env:
-          # Injecting the repository secrets securely into the script's environment
           SEATTLE_LOGIN_USERNAME: ${{ secrets.SEATTLE_LOGIN_USERNAME }}
           SEATTLE_LOGIN_PASSWORD: ${{ secrets.SEATTLE_LOGIN_PASSWORD }}
         run: bin/test_idcs.sh
               
-      - name: Send message to ms teams   
+      - name: Send failure alert to Slack
         if: failure()
-        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
+        uses: slackapi/slack-github-action@v1.24.0
         with:
-          webhook: '${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}'
-          message: 'Testing CiviForm Login failed. The SSO/IDCS login flow may be broken. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          slack-message: '🚨 *CiviForm Login Test Failed* 🚨\nThe SSO/IDCS login flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
-      - name: Force send test message to ms teams
-        if: (env.FORCE_SEND_TEAMS_MESSAGE == 'true')
-        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
+      - name: Force send test alert to Slack
+        if: (env.FORCE_SEND_SLACK_MESSAGE == 'true')
+        uses: slackapi/slack-github-action@v1.24.0
         with:
-          webhook: '${{ secrets.MICROSOFT_TEAMS_WEBHOOK_URI }}'
-          message: 'Nothing is wrong. Just testing the teams connection from the CiviForm Login workflow.'
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          slack-message: '✅ *CiviForm Slack Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
