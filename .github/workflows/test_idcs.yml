@@ -11,7 +11,7 @@ on:
 
   schedule:
     # Runs at the top of every hour
-    - cron: '0 * * * *'
+    - cron: '0 */8 * * *'
 
 permissions: {}
 
