@@ -49,8 +49,10 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
-            channel: "${{ secrets.SLACK_CHANNEL_ID }}"
-            text: "🚨 *CiviForm Login Test Failed* 🚨\nThe SSO/IDCS login flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            {
+              "channel": "${{ secrets.SLACK_CHANNEL_ID }}",
+              "text": "🚨 *CiviForm Login Test Failed* 🚨\nThe SSO/IDCS login flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            }
 
       - name: Force send test alert to Slack
         if: (env.FORCE_SEND_SLACK_MESSAGE == 'true')
@@ -59,5 +61,7 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
-            channel: "${{ secrets.SLACK_CHANNEL_ID }}"
-            text: "✅ *CiviForm Slack Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            {
+              "channel": "${{ secrets.SLACK_CHANNEL_ID }}",
+              "text": "✅ *CiviForm Slack Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            }
