@@ -63,5 +63,5 @@ jobs:
           payload: |
             {
               "channel": "${{ secrets.SLACK_CHANNEL_ID }}",
-              "text": "✅ *CiviForm Slack Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              "text": "✅ *CiviForm Login Test Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
