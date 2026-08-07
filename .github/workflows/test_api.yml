@@ -8,6 +8,11 @@ on:
         type: environment
         default: test
         required: true
+      force_send_slack_message:
+        type: boolean
+        description: 'Send Slack message anyway'
+        default: false
+        required: false
 
 permissions: {}
 
@@ -18,10 +23,11 @@ jobs:
 
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
+      FORCE_SEND_SLACK_MESSAGE: ${{ (github.event.inputs != null && github.event.inputs.force_send_slack_message == 'true') }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup
         run: cd qa && npm install
@@ -37,7 +43,7 @@ jobs:
         if: failure()
         run: echo "FAILED"
 
-          - name: Send failure alert to Slack
+      - name: Send failure alert to Slack
         if: failure()
         uses: slackapi/slack-github-action@v2.0.0
         with:
@@ -46,7 +52,7 @@ jobs:
           payload: |
             {
               "channel": "${{ secrets.SLACK_CHANNEL_ID }}",
-              "text": "🚨 *CiviForm Login Test Failed* 🚨\nThe SSO/IDCS login flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              "text": "🚨 *CiviForm API Test Failed* 🚨\nThe API flow may be broken. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
 
       - name: Force send test alert to Slack
@@ -58,7 +64,7 @@ jobs:
           payload: |
             {
               "channel": "${{ secrets.SLACK_CHANNEL_ID }}",
-              "text": "✅ *CiviForm Login Test Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              "text": "✅ *CiviForm API Test Notification Check* ✅\nNothing is wrong. This is a manual test to verify the Slack connection from the GitHub workflow. View run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
 
       # - name: Send message to ms teams   

@@ -8,13 +8,12 @@ on:
         description: 'Message Teams anyway'
         default: false
         required: false
-        
-    inputs:
       force_send_slack_message:
         type: boolean
         description: 'Send Slack message anyway'
         default: false
         required: false
+        
   schedule:
     - cron: '0 * * * *'
 
@@ -26,10 +25,11 @@ jobs:
 
     env:
       FORCE_SEND_TEAMS_MESSAGE: ${{ (github.event.inputs != null && github.event.inputs.force_send_teams_message == 'true') }}
+      FORCE_SEND_SLACK_MESSAGE: ${{ (github.event.inputs != null && github.event.inputs.force_send_slack_message == 'true') }}
       
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run gis testing script
         run: bin/test_gis.sh
