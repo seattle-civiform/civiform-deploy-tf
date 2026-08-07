@@ -8,7 +8,13 @@ on:
         description: 'Message Teams anyway'
         default: false
         required: false
-
+        
+    inputs:
+      force_send_slack_message:
+        type: boolean
+        description: 'Send Slack message anyway'
+        default: false
+        required: false
   schedule:
     - cron: '0 * * * *'
 
