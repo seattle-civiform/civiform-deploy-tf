@@ -159,7 +159,7 @@ export POSTGRES_BACKUP_RETENTION_DAYS=3
 # The name to prefix all resources with.
 export APP_PREFIX="cf-staging" # max 19 chars, only numbers, letters, dashes, and underscores
 
-export SSL_CERTIFICATE_ARN="arn:aws:acm:us-west-2:405662711265:certificate/c62046c2-ac1c-4131-8a1d-3c91d2b81a21"
+export SSL_CERTIFICATE_ARN="arn:aws:acm:us-west-2:405662711265:certificate/76c88ead-a61f-4afe-94e8-8c69f258a406"
 export FARGATE_DESIRED_TASK_COUNT=1
 export ECS_SCALE_TARGET_MIN_CAPACITY=1
 
