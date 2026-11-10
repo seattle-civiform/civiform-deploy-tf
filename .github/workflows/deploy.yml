@@ -22,7 +22,7 @@ on:
         required: true
 
   schedule:
-    - cron: '0 7 * * *' 
+    - cron: 0 6 * * 2-6 # At 6AM UTC Tues-Sat 
 
 permissions:
   id-token: write
