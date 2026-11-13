@@ -34,6 +34,7 @@ export CIVIFORM_VERSION="latest"
 #    depending on USE_DOCKER flag.
 #
 # Using "latest" is recommended.
+export CLOUD_DEPLOY_INFRA_REMOTE="https://github.com/seattle-civiform/cloud-deploy-infra"
 export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
 
 # Terraform configuration

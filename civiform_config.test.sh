@@ -36,7 +36,8 @@ export CIVIFORM_VERSION="v3.40.0"
 # Using "latest" is recommended.
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.30.0"
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
-export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
+export CLOUD_DEPLOY_INFRA_REMOTE="https://github.com/seattle-civiform/cloud-deploy-infra"
+export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.41.0-seattle"
 
 # Terraform configuration
 #################################################
