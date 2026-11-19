@@ -139,6 +139,9 @@ export POSTGRES_INSTANCE_CLASS="db.t3.micro"
 # Number of days to keep backups
 export POSTGRES_BACKUP_RETENTION_DAYS=5
 
+# Ensuring cloudwatch retention period is set to never expire
+export CLOUDWATCH_LOG_RETENTION_DAYS=0
+
 # REQUIRED
 # The name to prefix all resources with.
 export APP_PREFIX="cf-test" # max 19 chars, only numbers, letters, dashes, and underscores
