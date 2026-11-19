@@ -153,6 +153,9 @@ export ECS_SCALE_TARGET_MIN_CAPACITY=2
 # If set to a non-disabled value, you must configure the respective auth parameters
 export CIVIFORM_APPLICANT_IDP="idcs"
 
+# Ensuring cloudwatch retention period is set to never expire
+export CLOUDWATCH_LOG_RETENTION_DAYS=0
+
 # generic-oidc Auth configuration
 #################################################
 
