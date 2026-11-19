@@ -141,6 +141,9 @@ export CIVIFORM_SERVER_METRICS_ENABLED=false
 # Don't deploy of Prometheus and Graphana
 export MONITORING_STACK_ENABLED=false
 
+# Ensuring cloudwatch retention period is set to never expire
+export CLOUDWATCH_LOG_RETENTION_DAYS=0
+
 #################################################
 # Template variables for: aws_oidc
 #################################################
