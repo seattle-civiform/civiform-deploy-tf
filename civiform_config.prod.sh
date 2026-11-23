@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v3.39.0"
+export CIVIFORM_VERSION="v3.41.1"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -35,8 +35,8 @@ export CIVIFORM_VERSION="v3.39.0"
 #
 # Using "latest" is recommended.
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.30.0"
-#export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
-export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
+export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
+#export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"
 
 # Terraform configuration
 #################################################
@@ -152,6 +152,9 @@ export ECS_SCALE_TARGET_MIN_CAPACITY=2
 # Which auth provider to use for applicants to login.
 # If set to a non-disabled value, you must configure the respective auth parameters
 export CIVIFORM_APPLICANT_IDP="idcs"
+
+# Ensuring cloudwatch retention period is set to never expire
+export CLOUDWATCH_LOG_RETENTION_DAYS=0
 
 # generic-oidc Auth configuration
 #################################################
