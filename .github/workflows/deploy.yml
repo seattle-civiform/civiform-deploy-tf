@@ -88,7 +88,18 @@ jobs:
 
       - name: Debug GitHub API curl
         if: (env.ENVIRONMENT == 'test')
-        run: curl -iSv "https://api.github.com/repos/civiform/civiform/git/refs/tags/v3.41.1"
+        run: |
+          echo "=== 1. Plural /git/refs/tags/v3.41.1 (unauthenticated) ==="
+          curl -sS -D - -o /tmp/resp1 "https://api.github.com/repos/civiform/civiform/git/refs/tags/v3.41.1" || true
+          head -c 500 /tmp/resp1; echo ""
+
+          echo "=== 2. Singular /git/ref/tags/v3.41.1 (unauthenticated) ==="
+          curl -sS -D - -o /tmp/resp2 "https://api.github.com/repos/civiform/civiform/git/ref/tags/v3.41.1" || true
+          head -c 500 /tmp/resp2; echo ""
+
+          echo "=== 3. Singular /git/ref/tags/v3.41.1 (authenticated) ==="
+          curl -sS -D - -o /tmp/resp3 -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/civiform/civiform/git/ref/tags/v3.41.1" || true
+          head -c 500 /tmp/resp3; echo ""
 
       - name: Run deployment with latest on ${{ env.ENVIRONMENT }}
         if: (env.DEPLOY_ENABLED == 'true')
