@@ -23,7 +23,7 @@ export CIVIFORM_MODE="prod"
 #
 # For dev and staging civiform modes, can be "latest". For prod, must be a version from
 # https://github.com/civiform/civiform/releases, for example "v1.2.3".
-export CIVIFORM_VERSION="v3.40.0"
+export CIVIFORM_VERSION="v3.41.1"
 
 # REQUIRED
 # Version of the infrastructure to use.
@@ -35,9 +35,9 @@ export CIVIFORM_VERSION="v3.40.0"
 #
 # Using "latest" is recommended.
 #export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.30.0"
-#export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
-export CLOUD_DEPLOY_INFRA_REMOTE="https://github.com/seattle-civiform/cloud-deploy-infra"
-export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.41.0-seattle"
+export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="latest"
+#export CLOUD_DEPLOY_INFRA_REMOTE="https://github.com/seattle-civiform/cloud-deploy-infra"
+#export CIVIFORM_CLOUD_DEPLOYMENT_VERSION="v3.41.0-seattle"
 
 # Terraform configuration
 #################################################
